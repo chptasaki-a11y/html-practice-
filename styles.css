@@ -1,12 +1,13 @@
 :root {
-    --color-bg: #fff8ff;
-    --color-bg-alt: #faece8;
+    --color-bg: #fff8fb;
+    --color-bg-alt: #fff4f4;
     --color-rose: #d4a5a5;
     --color-rose-light: #e8c4c4;
-    --color-lavender: #b8a9c9;
+    --color-rose-dark: #b61c4a;
+    --color-lavender: #d4b8e0;
     --color-lavender-light: #d8cfe8;
-    --color-text: #4a4040;
-    --color-text-muted: #7a7070;
+    --color-text: #5e5056;
+    --color-text-muted: #8d8282;
     --color-white: #ffffff;
   
     --font-display: "Cormorant Garamond", Georgia, serif;
@@ -105,8 +106,16 @@
     font-weight: 600;
     color: var(--color-text);
     letter-spacing: 0.04em;
+   
   }
-  
+  @media (max-width: 480px) {
+    .logo {
+      white-space: nowrap;
+      font-size: 1.05rem;
+      letter-spacing: 0.02em;
+    }
+  }
+
   .logo:hover {
     color: var(--color-rose);
   }
@@ -131,6 +140,90 @@
     color: var(--color-rose);
   }
   
+  .menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    position: relative;
+    z-index: 120;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    margin: 6px auto;
+    background: var(--color-text);
+    border-radius: 999px;
+    transition:
+      transform 0.35s ease,
+      opacity 0.25s ease,
+      background 0.25s ease;
+  }
+  
+  .menu-toggle.is-open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .menu-toggle.is-open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.is-open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+  
+  @media (max-width: 767px) {
+    .menu-toggle {
+      display: block;
+    }
+  
+    .nav {
+      position: fixed;
+      top: var(--header-height);
+      left: 0;
+      right: 0;
+      padding: var(--space-lg) var(--space-md);
+      background: rgba(255, 251, 248, 0.96);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(212, 165, 165, 0.18);
+      box-shadow: var(--shadow-soft);
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(-12px);
+      transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease,
+        transform 0.35s ease;
+    }
+  
+    .nav.is-open {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+  
+    .nav ul {
+      flex-direction: column;
+      align-items: center;
+      gap: var(--space-md);
+    }
+  
+    .nav a {
+      display: block;
+      padding: 0.4rem 0;
+      font-size: 0.9rem;
+    }
+  
+    body.menu-open {
+      overflow: hidden;
+    }
+  }
+
   /* Buttons */
   .btn {
     display: inline-flex;
@@ -164,12 +257,13 @@
   .btn-secondary {
     background: var(--color-white);
     color: var(--color-text);
-    border: 1px solid var(--color-rose-light);
+    border: 1px solid var(--color-lavender);
   }
   
   .btn-secondary:hover {
-    background: var(--color-bg-alt);
-    color: var(--color-rose);
+    background: var(--color-lavender);
+    color: var(--color-lavender);
+    color: var(--color-white);
   }
   
   .btn-instagram {
@@ -179,8 +273,8 @@
   }
   
   .btn-instagram:hover {
-    background: var(--color-lavender-light);
-    color: var(--color-text);
+    background: var(--color-lavender);
+    color: var(--color-white);
   }
   
   .btn-large {
@@ -241,24 +335,82 @@
   }
   
   .hero-floral {
-    position: absolute;
-    z-index: 1;
-    width: 120px;
-    height: 120px;
+    position: fixed;
+    z-index: 90;
+    width: 46px;
+    height: 46px;
     color: var(--color-rose);
-    opacity: 0.25;
+    opacity: 0.28;
     pointer-events: none;
+    animation: floralSpin 24s linear infinite;
+    will-change: transform;
   }
   
-  .hero-floral--left {
-    top: 18%;
-    left: 5%;
+  .hero-floral svg {
+    width: 100%;
+    height: 100%;
   }
   
-  .hero-floral--right {
-    bottom: 20%;
-    right: 5%;
+  .hero-floral--1 {
+    top: 18vh;
+    left: 3vw;
+    color: var(--color-rose);
+  }
+  
+  .hero-floral--2 {
+    top: 28vh;
+    right: 3vw;
+    width: 38px;
+    height: 38px;
     color: var(--color-lavender);
+    animation-duration: 12s; animation-direction: reverse; 
+  }
+  
+  .hero-floral--3 {
+    top: 64vh;
+    left: 7vw;
+    width: 34px;
+    height: 90px;
+    color: var(--color-lavender);
+    animation-duration: 10s;
+  }
+  
+  .hero-floral--4 {
+    top: 66vh;
+    right: 7vw;
+    width: 50px;
+    height: 50px;
+    color: var(--color-rose);
+  }
+  
+  @keyframes floralSpin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .hero-floral {
+      animation: none;
+      /* transform: none !important; は削除（回転を止めるだけなら animation: none で足りる） */
+    }
+  }
+
+  @media (max-width: 480px) {
+    .hero-floral {
+      width: 32px;
+      height: 32px;
+    }
+  
+    .hero-floral--4 {
+      width: 38px;
+      height: 38px;
+    }
+  }
+  
+  @media (prefers-reduced-motion: reduce) {
+    .hero-floral {
+      transform: none !important;
+    }
   }
   
   .hero-content {
@@ -668,10 +820,7 @@
       flex-wrap: wrap;
     }
   
-    .hero-floral {
-      width: 160px;
-      height: 160px;
-    }
+  
   }
   
   @media (max-width: 480px) {
