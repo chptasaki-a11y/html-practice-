@@ -341,7 +341,9 @@
     height: 46px;
     color: var(--color-rose);
     opacity: 0.28;
-    pointer-events: none;
+
+    /* 回るアニメーション */
+    pointer-events: auto;
     animation: floralSpin 24s linear infinite;
     will-change: transform;
   }
@@ -356,7 +358,24 @@
     left: 3vw;
     color: var(--color-rose);
   }
+
+  /* 揺らすアニメーション */
+  .hero-floral--1:hover {
+    animation:shake 0.8s ease;
+}
+ 
+@keyframes shake {
+    0%   { transform:rotate(0); }
+    16%  { transform:rotate(12deg); }
+    32%  { transform:rotate(-10deg); }
+    48%  { transform:rotate(8deg); }
+    64%  { transform:rotate(-6deg); }
+    80%  { transform:rotate(4deg); }
+    96%  { transform:rotate(-2deg); }
+    100% { transform:rotate(0deg); }
+}
   
+
   .hero-floral--2 {
     top: 28vh;
     right: 3vw;
@@ -502,6 +521,47 @@
     aspect-ratio: 3 / 2;
     object-fit: cover;
   }
+
+  /* .about-card {
+    position: relative;
+    border-radius: 24px;
+    background: #fff;
+    overflow: hidden;
+  
+    transition:
+      transform .35s ease,
+      box-shadow .35s ease;
+  }
+  
+  .about-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+  
+    border-radius: inherit;
+    border: 1.5px solid #e8c4c4;
+  
+    opacity: 0;
+    transform: scale(.96);
+  
+    transition:
+      opacity .35s ease,
+      transform .35s ease;
+  }
+  
+  .about-card:hover {
+    transform: translateY(-6px);
+  
+    box-shadow:
+      0 10px 30px rgba(232,196,196,.12);
+  }
+  
+  .about-card:hover::before {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+   */
   
   /* Gallery */
   .gallery-grid {
