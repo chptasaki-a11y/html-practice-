@@ -15,7 +15,7 @@
 <script>
     document.addEventListener("DOMContentLoaded", () => {
       const revealTargets = document.querySelectorAll(
-        ".section-title, .section-lead, .about-card, .menu-item, .info-block, .reserve-desc, .reserve-actions, .access-address, .access-station, .gallery-note, .menu-note, .about-summary"
+        ".section-title, .section-lead, .about-card, .menu-item, .info-block, .contact-desc, .contact-actions, .access-address, .access-station, .gallery-note, .menu-note, .about-summary"
       );
   
       const imageTargets = document.querySelectorAll(
@@ -94,6 +94,8 @@
 
 
 <body>
+
+  <!-- Header -->
     <header class="site-header">
         <div class="header-inner">
           <a href="#" class="logo">Luna Fleur</a>
@@ -107,16 +109,19 @@
           <nav class="nav" aria-label="メインナビゲーション">
             <ul>
               <li><a href="#about">About</a></li>
-              <li><a href="#gallery">Gallery</a></li>
               <li><a href="#menu">Menu</a></li>
+              <li><a href="#info">Info</a></li>
               <li><a href="#access">Access</a></li>
-              <li><a href="#reserve">Reserve</a></li>
+              <li><a href="#contact">Contact</a></li>
             </ul>
           </nav>
         </div>
       </header>
 
+
   <main>
+
+    <!-- Hero -->
         <section id="hero" section class="hero" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true">
         <img
@@ -173,10 +178,12 @@
         <p class="hero-label">Nail Studio in Omotesando</p>
         <h1 id="hero-title" class="hero-title">Luna Fleur<br><span class="hero-title-sub">Nail Studio</span></h1>
         <p class="hero-catch">表参道・徒歩5分の<br>完全予約制サロン</p>
-        <a href="#reserve" class="btn btn-primary">ご予約はこちら</a>
+        <a href="#contact" class="btn btn-primary">ご予約はこちら</a>
       </div>
     </section>
 
+
+ <!-- About -->
     <section id="about" class="section about" aria-labelledby="about-title">
       <div class="section-inner">
         <h2 id="about-title" class="section-title">About</h2>
@@ -213,46 +220,8 @@
       </div>
     </section>
 
-    <section id="gallery" class="section gallery" aria-labelledby="gallery-title">
-      <div class="section-inner section-inner--wide">
-        <h2 id="gallery-title" class="section-title">Gallery</h2>
-        <p class="section-lead">デザインの雰囲気イメージ</p>
-        <div class="gallery-grid">
-          <figure class="gallery-item gallery-item--large">
-            <img
-              src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=900&q=80"
-              alt="ニュアンスカラーのネイルデザイン（仮画像）"
-              width="900"
-              height="1200"
-              loading="lazy"
-            >
-            <figcaption>ニュアンスネイル</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img
-              src="https://images.unsplash.com/photo-1632345031435-8727f6897d6f?auto=format&fit=crop&w=600&q=80"
-              alt="シンプルなネイルアート（仮画像）"
-              width="600"
-              height="800"
-              loading="lazy"
-            >
-            <figcaption>定額デザイン</figcaption>
-          </figure>
-          <figure class="gallery-item">
-            <img
-              src="https://images.unsplash.com/photo-1522338242992-e786a38571fd?auto=format&fit=crop&w=600&q=80"
-              alt="フレンチネイルのイメージ（仮画像）"
-              width="600"
-              height="800"
-              loading="lazy"
-            >
-            <figcaption>フレンチネイル</figcaption>
-          </figure>
-        </div>
-        <p class="gallery-note">※掲載写真はイメージ用の仮画像です。実際の施術例はInstagramでもご覧いただけます。</p>
-      </div>
-    </section>
-
+   
+  <!-- Menu -->
     <section id="menu" class="section menu" aria-labelledby="menu-title">
       <div class="section-inner">
         <h2 id="menu-title" class="section-title">Menu</h2>
@@ -283,6 +252,8 @@
       </div>
     </section>
 
+
+    <!-- Info -->
     <section id="info" class="section info" aria-labelledby="info-title">
       <div class="section-inner">
         <h2 id="info-title" class="section-title">Hours</h2>
@@ -303,15 +274,17 @@
       </div>
     </section>
 
+
+    <!-- Access -->
     <section id="access" class="section access" aria-labelledby="access-title">
       <div class="section-inner">
         <h2 id="access-title" class="section-title">Access</h2>
         <address class="access-address">
           〒150-0001<br>
-          東京都渋谷区神宮前3-18-7<br>
-          ルミエール表参道 2F
+          東京都渋谷区道玄坂1-2-3<br>
+          インドビル 1F
         </address>
-        <p class="access-station">表参道駅から徒歩5分</p>
+        <p class="access-station">渋谷駅 東口  徒歩3分</p>
         <figure class="access-visual">
           <img
             src="https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1000&q=80"
@@ -330,12 +303,13 @@
       </div>
     </section>
 
-    <section id="reserve" class="section reserve" aria-labelledby="reserve-title">
+
+    <!-- Contact -->
+    <section id="contact" class="section contact" aria-labelledby="contact-title">
       <div class="section-inner">
-        <h2 id="reserve-title" class="section-title">Reserve</h2>
-        <p class="section-lead">完全予約制のため、事前のご予約をお願いいたします。</p>
-        <p class="reserve-desc">お電話または公式InstagramのDMにて受付しております。</p>
-        <div class="reserve-actions">
+        <h2 id="contact-title" class="section-title">Contact</h2>
+        <p class="contact-desc">お電話または公式InstagramのDMにて承っております。</p>
+        <div class="contact-actions">
           <a href="tel:0348297164" class="btn btn-primary btn-large">
             <span class="btn-tel">03-4829-7164</span>
           </a>
@@ -351,6 +325,7 @@
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <p class="footer-name">Luna Fleur Nail Studio</p>
     <p class="footer-tel">
@@ -358,5 +333,8 @@
     </p>
     <p class="footer-copy">&copy; Luna Fleur Nail Studio</p>
   </footer>
+
 </body>
+
+
 </html>
